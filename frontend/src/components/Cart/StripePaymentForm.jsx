@@ -40,13 +40,13 @@ const StripePaymentForm = ({ checkoutId }) => {
                 };
 
                 // 2. الدفع نجح حقيقي! نكلم الباكيند بتاعنا (PUT /api/checkout/:id/pay)
-                await axios.put(`http://localhost:9000/api/checkout/${checkoutId}/pay`, {
+                await axios.put(`https://ecomerce-mern-backend-8psi.onrender.com/api/checkout/${checkoutId}/pay`, {
                     paymentStatus: "paid",
                     paymentDetails: paymentIntent
                 }, config);
 
                 // 3. نكلم الـ Finalize (POST /api/checkout/:id/finalize) عشان يكريت الـ Order ويمسح الكارت
-                await axios.post(`http://localhost:9000/api/checkout/${checkoutId}/finalize`, {}, config);
+                await axios.post(`https://ecomerce-mern-backend-8psi.onrender.com/api/checkout/${checkoutId}/finalize`, {}, config);
 
                 // 4. التوجه لصفحة نجاح الطلب
                 navigate("/orderConfirmation");
