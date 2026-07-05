@@ -11,7 +11,7 @@ export const createCheckout = createAsyncThunk(
     async (checkoutData, { rejectWithValue }) => {
         try {
             const response = await axios.post(
-                `http://localhost:9000/api/checkout`,
+                `https://ecomerce-mern-backend-8psi.onrender.com/api/checkout`,
                 checkoutData,
                 {
                     headers: {
