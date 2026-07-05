@@ -6,7 +6,7 @@ import axios from "axios";
 export const fetchUserOrders = createAsyncThunk("orders/fetchUserOrders",
     async (_, { rejectWithValue }) => {
         try {
-            const response = await axios.get(`http://localhost:9000/api/orders/myOrders`,
+            const response = await axios.get(`https://ecomerce-mern-backend-8psi.onrender.com/api/orders/myOrders`,
                 {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("userToken")}`
@@ -25,7 +25,7 @@ export const fetchUserOrders = createAsyncThunk("orders/fetchUserOrders",
 export const fetchOrderDetails = createAsyncThunk("orders/fetchOrderDetails",
     async (orderId, { rejectWithValue }) => {
         try {
-            const response = await axios.get(`http://localhost:9000/api/orders/${orderId}`,
+            const response = await axios.get(`https://ecomerce-mern-backend-8psi.onrender.com/api/orders/${orderId}`,
                 {
 
                     headers: {
