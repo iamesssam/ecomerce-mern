@@ -89,7 +89,7 @@ const Checkout = () => {
 
     const handlePaymentSuccess = async (details) => {
         try {
-            const response = await axios.put(`http://localhost:9000/api/checkout/${checkoutId}/pay`,
+            const response = await axios.put(`https://ecomerce-mern-backend-8psi.onrender.com/api/checkout/${checkoutId}/pay`,
                 {
                     paymentStatus: "paid",
                     paymentDetails: details
@@ -110,7 +110,7 @@ const Checkout = () => {
     const handleFinalizeCheckout = async (checkoutId) => {
         try {
             const response = await axios.
-                post(`http://localhost:9000/api/checkout/${checkoutId}/finalize`,
+                post(`https://ecomerce-mern-backend-8psi.onrender.com/api/checkout/${checkoutId}/finalize`,
                     {},
                     {
                         headers: {
