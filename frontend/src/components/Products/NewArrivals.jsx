@@ -7,51 +7,11 @@ const NewArrivals = () => {
     // 2. إنشاء المرجع (Ref)
     const scrollRef = useRef(null);
 
-    // const newArrivals = [
-    //     {
-    //         _id: "1",
-    //         name: "Shirt",
-    //         price: 120,
-    //         images: [{ url: "https://static.massimodutti.net/assets/public/668e/d606/f0524821b42a/f4eafa39f57b/01212208401-o6/01212208401-o6.jpg?ts=1774361602795&w=850&f=auto" }]
-    //     },
-    //     {
-    //         _id: "2",
-    //         name: "Polo",
-    //         price: 180,
-    //         images: [{ url: "https://static.massimodutti.net/assets/public/2e7e/2801/a5554bd9b148/44de36fbf33b/01181202401-o7/01181202401-o7.jpg?ts=1773396912102&w=850&f=auto" }]
-    //     },
-    //     {
-    //         _id: "3",
-    //         name: "Shirt",
-    //         price: 190,
-    //         images: [{ url: "https://static.massimodutti.net/assets/public/43cb/436d/a1b7494bbb1b/e0e62a0c771b/0193326340003-o7/0193326340003-o7.jpg?ts=1775663199439&w=1920&f=auto" }]
-    //     },
-    //     {
-    //         _id: "4",
-    //         name: "Shirt",
-    //         price: 250,
-    //         images: [{ url: "https://static.massimodutti.net/assets/public/2c06/762c/c4524c6b9fd6/34f070c92ef6/01995266428-o6/01995266428-o6.jpg?ts=1773662570618&w=1920&f=auto" }]
-    //     },
-    //     {
-    //         _id: "5",
-    //         name: "Polo Shirt",
-    //         price: 280,
-    //         images: [{ url: "https://static.massimodutti.net/assets/public/a36f/0a66/b893499ea0d3/b3ec8afbafe5/01249201401-o6/01249201401-o6.jpg?ts=1775554453185&w=1920&f=auto" }]
-    //     },
-    //     {
-    //         _id: "6",
-    //         name: "Polo",
-    //         price: 210,
-    //         images: [{ url: "https://static.massimodutti.net/assets/public/a36f/0a66/b893499ea0d3/b3ec8afbafe5/01249201401-o6/01249201401-o6.jpg?ts=1775554453185&w=1920&f=auto" }]
-    //     }
-    // ]
-
-
     const [newArrivals, setNewArrivals] = useState([]);
 
     const fetchNewArrivals = async () => {
         try {
-            const res = await axios.get("http://localhost:9000/api/product/newArrivals");
+            const res = await axios.get("https://ecomerce-mern-backend-8psi.onrender.com/api/product/newArrivals");
             setNewArrivals(res.data);
         } catch (error) {
             console.error(error);
