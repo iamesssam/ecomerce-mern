@@ -35,7 +35,7 @@ const saveCartToStorage = (cart) => {
 export const fetchCart = createAsyncThunk("cart/fetchCart",
     async ({ userId, guestId }, { rejectWithValue }) => {
         try {
-            const response = await axios.get(`http://localhost:9000/api/cart`, {
+            const response = await axios.get(`https://ecomerce-mern-backend-8psi.onrender.com/api/cart`, {
                 params: { userId, guestId },
             });
             return response.data;
@@ -52,7 +52,7 @@ export const fetchCart = createAsyncThunk("cart/fetchCart",
 export const addToCart = createAsyncThunk("cart/addToCart",
     async ({ productId, color, size, quantity, guestId, userId }, { rejectWithValue }) => {
         try {
-            const response = await axios.post(`http://localhost:9000/api/cart`,
+            const response = await axios.post(`https://ecomerce-mern-backend-8psi.onrender.com/api/cart`,
                 { productId, color, size, quantity, guestId, userId });
             return response.data;
         } catch (error) {
@@ -71,7 +71,7 @@ export const updateCartItemQuantity = createAsyncThunk("cart/updateCartItemQuant
         quantity, userId, guestId
     }, { rejectWithValue }) => {
         try {
-            const response = await axios.put(`http://localhost:9000/api/cart`,
+            const response = await axios.put(`https://ecomerce-mern-backend-8psi.onrender.com/api/cart`,
                 {
                     productId, color, size,
                     quantity, userId, guestId
@@ -106,7 +106,7 @@ export const updateCartItemQuantity = createAsyncThunk("cart/updateCartItemQuant
 export const removeFromCart = createAsyncThunk("cart/removeFromCart",
     async ({ productId, color, size, userId, guestId }, { rejectWithValue }) => {
         try {
-            const response = await axios.delete(`http://localhost:9000/api/cart`, {
+            const response = await axios.delete(`https://ecomerce-mern-backend-8psi.onrender.com/api/cart`, {
                 // في الـ DELETE لازم الداتا تكون جوه مفتاح اسمه data
                 data: { productId, color, size, userId, guestId }
             });
@@ -123,7 +123,7 @@ export const mergeCart = createAsyncThunk("cart/mergeCart",
     async ({ guestId, user }, { rejectWithValue }) => {
         try {
 
-            const response = await axios.post(`http://localhost:9000/api/cart/merge`,
+            const response = await axios.post(`https://ecomerce-mern-backend-8psi.onrender.com/api/cart/merge`,
                 { guestId, user },
                 {
                     headers: {
