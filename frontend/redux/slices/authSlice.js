@@ -24,7 +24,7 @@ const initialState = {
 //Async Thunk for User Login
 export const loginUser = createAsyncThunk("auth/loginUser", async (userDate, { rejectWithValue }) => {
     try {
-        const response = await axios.post("http://localhost:9000/api/users/login",
+        const response = await axios.post("https://ecomerce-mern-backend-8psi.onrender.com/api/users/login",
             userDate
         );
         localStorage.setItem("userInfo", JSON.stringify(response.data.user));
@@ -40,7 +40,7 @@ export const loginUser = createAsyncThunk("auth/loginUser", async (userDate, { r
 //Async Thunk for User Registration
 export const registerUser = createAsyncThunk("auth/registerUser", async (userData, { rejectWithValue }) => {
     try {
-        const response = await axios.post("http://localhost:9000/api/users/register"
+        const response = await axios.post("https://ecomerce-mern-backend-8psi.onrender.com/api/users/register"
             , userData);
         localStorage.setItem("userInfo", JSON.stringify(response.data.user));
         localStorage.setItem("userToken", response.data.token);
