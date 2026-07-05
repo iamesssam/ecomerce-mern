@@ -8,7 +8,7 @@ import axios from "axios";
 export const fetchUsers = createAsyncThunk("admin/fetchUsers",
     async (_, { rejectWithValue }) => {
         try {
-            const response = await axios.get(`http://localhost:9000/api/admin/users`,
+            const response = await axios.get(`https://ecomerce-mern-backend-8psi.onrender.com/api/admin/users`,
                 // { headers: `Bearer ${localStorage.getItem('userToken')}` }
                 {
                     headers: { Authorization: `Bearer ${localStorage.getItem("userToken")}` }
@@ -26,7 +26,7 @@ export const fetchUsers = createAsyncThunk("admin/fetchUsers",
 export const addUser = createAsyncThunk("admin/addUser",
     async (userData, { rejectWithValue }) => {
         try {
-            const response = await axios.post(`http://localhost:9000/api/admin/users/add`,
+            const response = await axios.post(`https://ecomerce-mern-backend-8psi.onrender.com/api/admin/users/add`,
                 userData,
                 {
                     headers: { Authorization: `Bearer ${localStorage.getItem("userToken")}` }
@@ -46,7 +46,7 @@ export const addUser = createAsyncThunk("admin/addUser",
 export const updateUser = createAsyncThunk("admin/updateUser",
     async ({ id, name, email, role }) => {
         try {
-            const response = await axios.put(`http://localhost:9000/api/admin/users/${id}`,
+            const response = await axios.put(`https://ecomerce-mern-backend-8psi.onrender.com/api/admin/users/${id}`,
                 { name, email, role },
                 {
                     headers: {
@@ -66,7 +66,7 @@ export const updateUser = createAsyncThunk("admin/updateUser",
 export const deleteUser = createAsyncThunk("admin/deleteUser",
     async (id) => {
         try {
-            const response = await axios.delete(`http://localhost:9000/api/admin/users/${id}`,
+            const response = await axios.delete(`https://ecomerce-mern-backend-8psi.onrender.com/api/admin/users/${id}`,
                 {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("userToken")}`
