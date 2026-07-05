@@ -6,7 +6,7 @@ import axios from "axios";
 export const fetchAllOrders = createAsyncThunk("adminOrders/fetchAllOrders",
     async (_, { rejectWithValue }) => {
         try {
-            const response = await axios.get(`http://localhost:9000/api/admin/orders`,
+            const response = await axios.get(`https://ecomerce-mern-backend-8psi.onrender.com/api/admin/orders`,
                 { headers: { Authorization: `Bearer ${localStorage.getItem("userToken")}` } }
             )
             return response.data;
@@ -21,7 +21,7 @@ export const fetchAllOrders = createAsyncThunk("adminOrders/fetchAllOrders",
 export const updateOrderStatus = createAsyncThunk("adminOrders/updateOrderStatus",
     async ({ id, status }, { rejectWithValue }) => {
         try {
-            const response = await axios.put(`http://localhost:9000/api/admin/orders/${id}`,
+            const response = await axios.put(`https://ecomerce-mern-backend-8psi.onrender.com/api/admin/orders/${id}`,
                 { status },
                 {
                     headers: {
@@ -42,7 +42,7 @@ export const updateOrderStatus = createAsyncThunk("adminOrders/updateOrderStatus
 export const deleteOrder = createAsyncThunk("adminOrders/deleteOrder",
     async (id, { rejectWithValue }) => {
         try {
-            await axios.delete(`http://localhost:9000/api/admin/orders/${id}`,
+            await axios.delete(`https://ecomerce-mern-backend-8psi.onrender.com/api/admin/orders/${id}`,
                 {
                     headers:
                     {
