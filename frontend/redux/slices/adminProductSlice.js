@@ -5,7 +5,7 @@ import axios from "axios";
 //async thunk to fetch admin products 
 export const fetchAdminProducts = createAsyncThunk("adminProducts/fetchProducts",
     async () => {
-        const response = await axios.get(`http://localhost:9000/api/admin/products`,
+        const response = await axios.get(`https://ecomerce-mern-backend-8psi.onrender.com/api/admin/products`,
             {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("userToken")}`
@@ -20,7 +20,7 @@ export const fetchAdminProducts = createAsyncThunk("adminProducts/fetchProducts"
 //async function to create a new product
 export const createProduct = createAsyncThunk("adminProducts/createProducts",
     async (productData) => {
-        const response = await axios.post(`http://localhost:9000/api/product/createProduct`,
+        const response = await axios.post(`https://ecomerce-mern-backend-8psi.onrender.com/api/product/createProduct`,
             productData,
             {
                 headers: {
@@ -37,7 +37,7 @@ export const createProduct = createAsyncThunk("adminProducts/createProducts",
 
 export const updateProduct = createAsyncThunk("adminProducts/updateProdut",
     async ({ id, productData }) => {
-        const response = await axios.put(`http://localhost:9000/api/product/${id}`,
+        const response = await axios.put(`https://ecomerce-mern-backend-8psi.onrender.com/api/product/${id}`,
             productData,
             {
                 headers: {
@@ -52,7 +52,7 @@ export const updateProduct = createAsyncThunk("adminProducts/updateProdut",
 //async thunk to delete a product
 export const deleteProduct = createAsyncThunk("adminProducts/deleteProduct",
     async (id) => {
-        const response = await axios.delete(`http://localhost:9000/api/product/${id}`,
+        const response = await axios.delete(`https://ecomerce-mern-backend-8psi.onrender.com/api/product/${id}`,
             {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("userToken")}`
