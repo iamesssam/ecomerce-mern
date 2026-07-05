@@ -7,58 +7,6 @@ import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchProductsDetails, fetchSimilarProducts } from '../../../redux/slices/productsSlice'
 import { addToCart } from '../../../redux/slices/cartSlice';
-// const selectedProduct1 = {
-//     name: "RELAXED FIT KNIT T-SHIRT",
-//     price: 120,
-//     originalPrice: 150,
-//     description: 'This is a stylish Polo for any occasion',
-//     brand: 'massimo dutti',
-//     material: 'Cotton',
-//     sizes: ["S", "M", "L", "XL"],
-//     colors: ['brown', 'Black'],
-//     images: [
-//         {
-//             url: 'https://static.zara.net/assets/public/0752/d74c/015d4e33a4a7/c21c8de44ac8/00526410716-p/00526410716-p.jpg?ts=1766134017363&w=1430'
-//         },
-//         {
-//             url: 'https://static.zara.net/assets/public/3ae7/7641/3119479dab12/fb02446d0de9/05755438800-a1/05755438800-a1.jpg?ts=1774962797723&w=1430'
-//         }
-//     ]
-// }
-
-
-// const similarProducts = [
-//     {
-//         _id: 1,
-//         name: 'Product 1',
-//         price: 100,
-//         images: [{ url: 'https://static.pullandbear.net/assets/public/937e/487e/c2064cf88e56/36a898bb265f/03540524800-M/03540524800-M.jpg?ts=1772617578060&w=766&f=auto' }]
-//     },
-
-//     {
-//         _id: 2,
-//         name: 'Brown bomber jacket',
-//         price: 110,
-//         images: [{ url: 'https://static.pullandbear.net/assets/public/daf3/38a4/1dbc4c899235/9d4f617ddc28/03721503700-M/03721503700-M.jpg?ts=1768219095957&w=766&f=auto' }]
-//     },
-
-//     {
-//         _id: 3,
-//         name: 'embroidered striped shirt',
-//         price: 120,
-//         images: [{ url: 'https://static.pullandbear.net/assets/public/3509/70ab/00784a09a25e/e5544bd207d6/03460501712-M/03460501712-M.jpg?ts=1764173319892&w=766&f=auto' }]
-//     },
-
-//     {
-//         _id: 4,
-//         name: 'Short-sleeved sweater',
-//         price: 150,
-//         images: [{ url: 'https://static.pullandbear.net/assets/public/3aba/8647/256b4b80b25c/3b825018ed34/03540524064-M/03540524064-M.jpg?ts=1772617597824&w=766&f=auto' }]
-//     },
-
-// ]
-
-
 
 
 const ProductDetails = ({ productId }) => {
